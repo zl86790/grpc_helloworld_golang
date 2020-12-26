@@ -5,13 +5,15 @@ import (
 	"fmt"
 	"helloworld/services"
 	"log"
+	"os"
 
 	"google.golang.org/grpc"
 )
 
 func main() {
-
-	conn, err := grpc.Dial(":8081", grpc.WithInsecure())
+	args := os.Args
+	url := args[1]
+	conn, err := grpc.Dial(url+":30010", grpc.WithInsecure())
 	if err != nil {
 		log.Println(err)
 	}
