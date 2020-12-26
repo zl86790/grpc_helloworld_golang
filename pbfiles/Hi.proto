@@ -1,0 +1,12 @@
+syntax="proto3";  //
+package services;
+option go_package = "../services";
+message HiRequest {
+  string say = 1;
+}
+message HiResponse {
+  string responed = 1;
+}
+service HiService {
+    rpc GetHiResponed(HiRequest) returns (HiResponse);
+}
